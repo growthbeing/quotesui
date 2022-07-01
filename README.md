@@ -2,7 +2,7 @@
 
 ### QuotesUI
 
-<img src="public/logo.jpg" height="100px" width="90px">
+<img src="public/logo.png" height="100px" width="90px">
 
 </div>
 
