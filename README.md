@@ -1,16 +1,17 @@
+<div align="center">
 
-## Quotesbee
+### QuotesUI
+
 <img src="public/logo.jpg" height="100px" width="90px">
-A random anime motivational quotes generator web app
 
+</div>
 
+#### Tech Stack Used
+    - Next.JS
+    - TailwindCSS
 
-```js
-// Tech Stack
-Next.JS - React Framework, Tailwind.CSS
-//Programming Language
-Javascript
-```
+#### Dependencies
+    - Quotesy (from **_dwyl_**)
 
 
 
