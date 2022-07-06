@@ -12,23 +12,22 @@ export default function Home(props) {
   const [quote, setQuote] = useState(props.data.text)
   const [buttonMessage, setButtonMessage] = useState("New Quote")
   
-  const getQuotes = async () => {
+  const getQuotes = () => {
 
     try{
       setButtonMessage("Loading...");     
-      //Fetch quotes data from the quotesy json file
-      loadQuote(await quotes.random());
+      setTimeout(() => {
+	//Fetch quotes data from the quotesy json file
+	const quote = quotes.random();
+	setAuthor(quote.author);
+        setQuote(quote.text);
+        setTags(quote.tags);
+        setButtonMessage("New quote");
+      }, 1000);
     }catch{
       new Error("Load failed");
       console.log("Quotes loading failed");
     }
-  }
-
-  const loadQuote = (quotes) =>{ 
-        setAuthor(quotes.author);
-        setQuote(quotes.text);
-        setTags(quotes.tags);
-        setButtonMessage("New quote");
   }
 
   return (
