@@ -9,27 +9,26 @@ import  quotes  from 'quotesy'
 export default function Home(props) {
   const [author, setAuthor] = useState(props.data.author)
   const [tags, setTags] = useState(props.data.tags)
-  const [quote, setQuote] = useState(props.data.quote)
+  const [quote, setQuote] = useState(props.data.text)
   const [buttonMessage, setButtonMessage] = useState("New Quote")
   
- const getQuotes = () => {
+  const getQuotes = async () => {
 
     try{
-      setButtonMessage("Loading...")      
+      setButtonMessage("Loading...");     
       //Fetch quotes data from the quotesy json file
-      loadQuote(quotes.random())
-      
+      loadQuote(await quotes.random());
     }catch{
       new Error("Load failed");
       console.log("Quotes loading failed");
     }
-}
+  }
 
-  const loadQuote = async (quotes) =>{ 
-        setAuthor(quotes.author)
-        setQuote(quotes.text) 
-        setTags(quotes.tags)
-        setButtonMessage("New quote")
+  const loadQuote = (quotes) =>{ 
+        setAuthor(quotes.author);
+        setQuote(quotes.text);
+        setTags(quotes.tags);
+        setButtonMessage("New quote");
   }
 
   return (
