@@ -26,7 +26,7 @@ export default function Home(props) {
       }, 1000);
     }catch{
       new Error("Load failed");
-      console.log("Quotes loading failed");
+      console.error("Quotes loading failed");
     }
   }
 
